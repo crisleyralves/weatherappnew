@@ -1,0 +1,11 @@
+<div class="weather-container">
+   <input type="text" [(ngModel)]="city" placeholder="Digite a cidade">
+    <button (click)="searchWeather()">Buscar</button>
+
+ <div *ngIf="weatherData" class="weather-info">
+    <h2>{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+    <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+    <p>Descrição: {{ weatherData.weather[0].description }}</p>
+    <img src="http://openweathermap.org/img/w/{{ weatherData.weather[0].icon }}.png" alt="Ícone do clima">
+ </div>
+</div>
